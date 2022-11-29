@@ -1,0 +1,35 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 0;
+    background: rgba(0, 0, 255, 0.637);
+    border-bottom: 2px solid black;
+    flex-wrap: wrap;
+}
+header h1{
+    color: aliceblue;
+    text-shadow: 1px 1px 3px black;
+}
+header nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+header nav li{
+    list-style: none;
+    margin:0 5px ;
+}
+header nav li form{
+    display: flex;
+}
+main h2{
+    text-align: center;
+}
+.message{
+     height: 83vh;
+     overflow: auto;
+     box-shadow: 1px 1px 3px darkblue;
+     border-radius: 3px 5px;
+}

@@ -1,0 +1,413 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family:  monospace; */
+}
+* a {
+    text-decoration: none;
+    display: inline-block;
+}
+* li{
+    list-style: none;
+}
+body{
+    display: flex;
+     height: 100vh;
+     overflow: auto;
+}
+#check, #lbl{
+    display: none;
+    position: absolute;
+}
+header{
+    background: rgb(217, 217, 217);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    width: 16%;
+    height: 100vh;
+    border-right: 2px solid blue;
+}
+header .titre h2{
+     text-align: center;
+     text-shadow: 1px 2px 3px black;
+     color: white;
+     margin-bottom: 20px;
+}
+nav{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+nav li{
+    margin: 10px 5px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.62);
+    padding: 5px;
+    border-radius: 2px;
+    cursor: pointer;
+    background: white;
+}
+nav li:hover{
+    background: rgb(184, 194, 202);
+}
+nav li a{
+   width: 100%;
+   text-align: center;
+   color: rgb(0, 0, 0);
+   text-shadow: 1px 2px 3px rgb(255, 255, 255);
+}
+nav .two li{
+    background: rgba(255, 0, 0, 0.817);
+}
+nav .two li a{
+    text-shadow: none;
+    color: white;
+}
+/* 
+media query 700px 
+*/
+@media screen and (max-width:700px) {
+    header{
+        width: 24%;
+        scroll-behavior: smooth;
+        transition: all 0.4s;
+    }
+    header .titre h2{
+     font-size: 1.3em;
+    }
+}
+/* 
+media query 700px 
+*/
+
+/* 
+media query 400px
+*/
+@media screen and (max-width:520px) {
+    header{
+        transform: translateX(-1000px);
+        position: absolute;
+        transition: all 0.4s;
+
+    }
+    header .titre h2{
+     font-size: 1em;
+    }
+     #lbl{
+        display: inline-block;
+        position: absolute;
+        cursor: pointer;
+        background: white;
+        padding: 5px;
+        box-shadow: 1px 1px 3px rgb(13, 13, 13);
+        border-radius: 2px;
+    }
+    #check:checked+header{
+        transform: translateX(0px);
+        position: relative;
+        overflow: auto;
+        transition: all 0.4s;
+    }
+    #check:checked+header .titre{
+            margin-top: 50px;
+    }
+    #lbl{
+        z-index: 111;
+    }
+}
+/* 
+media query 400px
+*/
+
+
+/* style main */
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    width: 86%;
+    background: rgba(61, 36, 36, 0.303);
+    overflow: auto;
+}
+.formulaire{
+    background: rgb(255, 255, 255);      
+    box-shadow: 1px 2px 6px rgba(13, 13, 13, 0.343);
+    height: 50vh;
+    width: 98%;
+    margin: 10px auto;
+}
+
+.formulaire .titre{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(13, 13, 13, 0.343);
+}
+.formulaire .titre h3{
+    text-align: center;
+    margin:10px ;
+     text-shadow: 1px 2px 3px rgb(255, 255, 255);
+     color: rgb(0, 0, 0);
+     margin-bottom: 20px;
+}
+.formulaire .titre .right{
+  display: flex;
+  align-items: center;
+  width: 100px;
+  justify-content: center;
+}
+.formulaire .titre .right label{
+    cursor: pointer;
+}
+
+/* 
+ style pour resize le formualaire
+
+ */
+ .reduire{
+    background: rgb(255, 255, 255);      
+    box-shadow: 1px 2px 6px rgba(13, 13, 13, 0.343);
+    height: 6vh;
+    padding: 10px;
+    overflow: hidden;
+    width: 98%;
+    margin: 10px auto;
+}
+.reduire .titre{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.reduire .titre h3{
+    text-align: center;
+     text-shadow: 1px 2px 3px rgb(255, 255, 255);
+     color: rgb(0, 0, 0);
+}
+.reduire .titre .right{
+  display: flex;
+  align-items: center;
+  width: 100px;
+  justify-content: center;
+}
+.reduire .titre .right label{
+    cursor: pointer;
+}
+/* 
+ style pour resize le formualaire
+
+ */
+
+
+
+
+
+.formulaire .form{
+    width: 98%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto;
+}
+.formulaire .form .items{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+.formulaire .form .items .item{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.formulaire .form .items .item label{
+    margin-left: 15px;
+}
+.formulaire .form .items .item .form-control{
+width: 95%;
+margin: auto;
+}
+.formulaire .form  .btns{
+    width: 90%;
+    display: flex;
+}
+/* 
+    style erreur
+*/
+
+.erreur{
+    padding: 5px;
+     background: transparent;
+     border: none;
+     color: red;
+}
+.resultat{
+    padding: 5px;
+     background: transparent;
+     border: none;
+     color: green;
+}
+
+/* fin style erreur */
+.formulaire .form  .btns .save{
+    padding: 0px 10px;
+}
+.tb{
+  height: 40vh;
+  overflow: auto;
+}
+/*  
+style button recherche
+*/
+.cher{
+    display: flex;
+    width: 99%;
+    margin: auto;
+    border-bottom: 0.2px solid rgba(0, 0, 0, 0.19);
+}
+.cher .form{
+    display: flex;
+    justify-content: space-between;
+}
+.cher .form .item{
+    margin: 0px 5px;
+    display: flex;
+}
+.cher .form .item button{
+    margin-left: 5px;
+}
+/* 
+show table style
+*/
+.show{
+    height: 88vh;
+    background: rgb(255, 255, 255);      
+    box-shadow: 1px 2px 6px rgba(13, 13, 13, 0.343);
+    width: 98%;
+    margin: 10px auto;
+}
+.show .cher{
+    display: flex;
+    width: 99%;
+    margin: auto;
+    border-bottom: 0.2px solid rgba(0, 0, 0, 0.19);
+}
+.show .cher .form{
+    display: flex;
+    justify-content: space-between;
+    width: 99%;
+    padding: 8px;
+}
+.show .cher .form .item{
+    margin: 0px 5px;
+    display: flex;
+}
+.show .cher .form .item button{
+    margin-left: 5px;
+}
+.show .tb{
+    height: 87vh;
+    overflow: auto;
+}
+
+/* 
+  style delete form 
+*/
+.delete{
+    position: absolute;
+    background: rgb(255, 255, 255);
+    width: 400px;
+    height: 160px;
+    top: 40%;
+    right: 40%;
+    left: 40%;
+    padding: 7px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 2px 4px;
+}
+.delete .form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.296);
+    height: 150px;
+    border-radius:4px;
+    padding: 10px ;
+}
+.delete .form span{
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+}
+.delete .form  .item h5{
+    text-align: center;
+}
+
+/* style photo  table*/
+.photo{
+    border-radius: 40%;
+    width: 50px;
+    box-shadow: 1px 1px 3px black;
+    height: 50px;
+}
+
+/* .acte de mariage styke */
+.text{
+    width: 100%;
+    height: 80vh;
+    border: 1px solid black;
+    padding: 10px;
+    overflow: auto;
+}
+
+.text .nav .haut{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.text .nav .haut h3{
+    font-size: 1.3em;
+}
+.text .nav .bas{   
+     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text .nav .bas h4{
+    font-size: 1.1em;
+}
+.tt{
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+}
+.epoux .imgs{
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+ p{
+    text-align: justify;
+    width: 90%;
+    margin: 5px auto;
+ }
+ .sin{
+    text-align: right;
+    width: 90%;
+ }
+ footer {
+    width: 90%;
+ }
+ footer h5{
+    text-align: center;
+ }
+ footer h6{
+    text-align: center;
+ }
